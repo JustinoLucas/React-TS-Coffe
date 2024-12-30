@@ -10,19 +10,10 @@ const CoffeList = () => {
     return (
         <div className="coffee-list">
             {data.map((coffee: any) => {
-                let imageUrl = "";
-                try {
-                    if (coffee.image_coffee) {
-                        const blob = new Blob([coffee.image_coffee], { type: "image/jpeg" });
-                        imageUrl = URL.createObjectURL(blob);
-                    }
-                } catch (err) {
-                    console.error("Erro ao criar URL da imagem:", err);
-                }
                 return (
                     <div key={coffee.id_coffee} className="coffee-item">
                         <div className="coffee-image">
-                            <img src={URL.createObjectURL(new Blob([coffee.image_coffee]))} alt={coffee.nome_coffee} />
+                            <img src={`http://localhost:8080/coffee/image/${coffee.image_coffee}`} alt={coffee.nome_coffee} />
                         </div>
                         <div className="coffee-info">
                             <h3>{coffee.nome_coffee}</h3>

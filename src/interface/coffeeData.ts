@@ -3,5 +3,5 @@ export interface coffeeData {
     nome_coffee: string,
     preco_coffee: number,
     desc_coffee: string,
-    image_coffee: Blob | null
+    image_coffee: string
 }
