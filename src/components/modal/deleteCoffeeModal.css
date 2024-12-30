@@ -1,0 +1,66 @@
+.delete-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .delete-modal {
+    background-color: rgb(37, 37, 37);
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    position: relative;
+  }
+  
+  .delete-modal h2 {
+    text-align: center;
+  }
+  
+  .delete-modal ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .delete-modal li {
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  .delete-modal li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .delete-modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .confirm-button,
+  .cancel-button {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .confirm-button {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .cancel-button {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .cancel-button {
+    margin-top: 10px;
+    width: 100%;
+  }
+  

@@ -33,6 +33,7 @@ export const DeleteModal: React.FC<DeleteModalProps> = ({ closeModal, confirmDel
 
   const handleCancel = () => {
     setSelectedCoffee(null); // Limpar a seleção
+    closeModal(); // Fechar o modal
   };
 
   const handleConfirmDelete = () => {
@@ -42,8 +43,15 @@ export const DeleteModal: React.FC<DeleteModalProps> = ({ closeModal, confirmDel
     }
   };
 
+  // Fechar o modal se o usuário clicar fora da área do modal
+  const handleOverlayClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      closeModal();
+    }
+  };
+
   return (
-    <div className="delete-modal-overlay">
+    <div className="delete-modal-overlay" onClick={handleOverlayClick}>
       <div className="delete-modal">
         <h2>Excluir Café</h2>
         {!selectedCoffee ? (
@@ -56,6 +64,11 @@ export const DeleteModal: React.FC<DeleteModalProps> = ({ closeModal, confirmDel
                 </li>
               ))}
             </ul>
+            <div className="delete-modal-buttons">
+              <button onClick={handleCancel} className="cancel-button">
+                Cancelar
+              </button>
+            </div>
           </>
         ) : (
           <>

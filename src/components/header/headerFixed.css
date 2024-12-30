@@ -39,6 +39,8 @@
 
 .menu-dropdown {
   position: absolute;
+  display: flex;
+  flex-direction: column;
   top: 60px;
   /* Ajuste conforme necessário */
   left: 0;
