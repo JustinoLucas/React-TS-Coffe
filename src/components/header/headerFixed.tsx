@@ -3,13 +3,16 @@ import "./headerFixed.css";
 import CreateCoffeeModal from "../modal/createCoffeeModal";
 import axios from "axios";
 import DeleteModal from "../modal/deleteCoffeeModal";
+import { useCart } from "../carrinho/carrinhoContexto";
+import Carrinho from "../carrinho/carrinho";
 
 
 const HeaderFixed = () => {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [carrinhoOpen, setCarrinhoOpen] = useState(false);
     const [isModalOpen, setModalOpen] = useState(false);
     const [isDeleteModalOpen, setDeleteModalOpen] = useState(false);
+    const [carrinhoOpen, setCarrinhoOpen] = useState(false);
+    const { cart } = useCart();
 
     const toggleMenu = () => setMenuOpen(!menuOpen);
     const toggleCarrinho = () => setCarrinhoOpen(!carrinhoOpen);
@@ -33,7 +36,7 @@ const HeaderFixed = () => {
             </button>
             <h1 className="header-titulo">Café Biwlu</h1>
             <button className="carrinho-toggle" onClick={toggleCarrinho}>
-                🛒
+                🛒 ({cart.length})
             </button>
             {menuOpen && (
                 <div className="menu-dropdown">
@@ -46,14 +49,13 @@ const HeaderFixed = () => {
                     <CreateCoffeeModal isOpen={isModalOpen} onClose={() => setModalOpen(false)}></CreateCoffeeModal>
                 </div>
 
-            )}
-            {isDeleteModalOpen && (
+            )}{isDeleteModalOpen && (
                 <DeleteModal
                     closeModal={() => setDeleteModalOpen(false)}
                     confirmDelete={handleDeleteProduct}
                 />
             )}
-
+            {carrinhoOpen && <Carrinho />}
         </header>
     )
 

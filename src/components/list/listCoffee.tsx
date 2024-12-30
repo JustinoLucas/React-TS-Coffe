@@ -1,11 +1,17 @@
 import { useCoffee } from "../../hooks/useCoffee"
+import { useCart } from "../carrinho/carrinhoContexto";
 import  "./listCoffee.css"
 
 const CoffeList = () => {
     const { data, isLoading, isError, error } = useCoffee();
+    const { addToCart } = useCart();
 
     if (isLoading) return <p>Carregando...</p>;
     if (isError) return <p>Erro: {error.message}</p>;
+
+    const handleAddToCart = (coffee: any) => {
+        addToCart(coffee);
+    }
 
     return (
         <div className="coffee-list">
@@ -20,7 +26,7 @@ const CoffeList = () => {
                             <p>{coffee.desc_coffee}</p>
                             <span className="coffee-price">R$ {coffee.preco_coffee.toFixed(2)}</span>
                         </div>
-                        <button className="add-to-cart"> + </button>
+                        <button className="add-to-cart" onClick={() => handleAddToCart(coffee)}> + </button>
                     </div>
                 );
             })}

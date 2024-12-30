@@ -1,0 +1,27 @@
+.cart-dropdown {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: rgb(37, 37, 37);
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cart-dropdown ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .cart-dropdown li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .cart-total {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
