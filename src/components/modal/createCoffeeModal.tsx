@@ -60,8 +60,15 @@ const CreateCoffeeModal: React.FC<CreateCoffeeModal> = ({ isOpen, onClose }) => 
 
     if (!isOpen) return null;
 
+
+    const handleOverlayClick = (e: React.MouseEvent) => {
+        if (e.target === e.currentTarget) {
+          onClose();
+        }
+      };
+
     return (
-        <div className="modal-overlay">
+        <div className="modal-overlay" onClick={handleOverlayClick}>
             <div className="modal-content">
                 <h2>Adicionar novo Café</h2>
                 <form onSubmit={handleChange}>

@@ -1,26 +1,28 @@
-.cart-dropdown {
+.carrinho-dropdown {
     position: absolute;
-    top: 50px;
-    right: 0;
-    background-color: rgb(37, 37, 37);
-    border: 1px solid #ccc;
+    top: 60px;
+    right: 1px;
+    background-color: rgb(44, 44, 44);
+    border: 0px solid #ccc;
     padding: 20px;
     width: 300px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  .cart-dropdown ul {
+  .carrinho-dropdown ul {
     list-style: none;
     padding: 0;
   }
   
-  .cart-dropdown li {
+  .carrinho-dropdown li {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    border-bottom: 1px solid #747474;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
   }
   
-  .cart-total {
+  .carrinho-total {
     margin-top: 10px;
     font-weight: bold;
   }

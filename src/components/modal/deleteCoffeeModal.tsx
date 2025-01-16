@@ -4,7 +4,7 @@ import './deleteCoffeeModal.css';
 
 interface DeleteModalProps {
   closeModal: () => void;
-  confirmDelete: (productId: number) => void;
+  confirmDelete: (productId: number) => Promise<void>
 }
 
 interface Coffee {
@@ -35,6 +35,7 @@ export const DeleteModal: React.FC<DeleteModalProps> = ({ closeModal, confirmDel
     setSelectedCoffee(null); // Limpar a seleção
     closeModal(); // Fechar o modal
   };
+  
 
   const handleConfirmDelete = () => {
     if (selectedCoffee) {
