@@ -34,7 +34,6 @@ const CreateCoffeeModal: React.FC<CreateCoffeeModal> = ({ isOpen, onClose }) => 
             await axiosInstance.post("/coffee", formData, {
                 headers: { "Content-Type": "multipart/form-data" },
             });
-            alert("Café adicionado com sucesso!");
             setNome("");
             setPreco("");
             setDescricao("");

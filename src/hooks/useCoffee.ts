@@ -23,5 +23,6 @@ export const useCoffee = () => {
     return {
         ...query,
         data: query.data || [],
+        refetch: query.refetch,
     };
 };

@@ -1,18 +1,23 @@
 import { useCoffee } from "../../hooks/useCoffee";
 import { useCart } from "../carrinho/carrinhoContexto";
-// import { coffeeData } from "../../interface/coffeeData";
+import { coffeeData } from "../../interface/coffeeData";
 import "./listCoffee.css";
 
 const ListCoffee = () => {
-  const { data, isLoading, isError, error } = useCoffee();
+  const { data, isLoading, isError, error, refetch } = useCoffee();
   const { addItem } = useCart();
 
   if (isLoading) return <p>Carregando...</p>;
   if (isError) return <p>Erro: {error.message}</p>;
 
+  const handleAddCoffee = (coffee: coffeeData) => {
+    addItem(coffee);
+    refetch();  // Forçar a atualização da lista após adicionar o café
+  };
+
   return (
     <div className="coffee-list">
-      {data.map((coffee) => (
+      {data.map((coffee: coffeeData) => (
         <div key={coffee.id_coffee} className="coffee-item">
           {/* Imagem do café */}
           <div className="coffee-image">
@@ -30,7 +35,7 @@ const ListCoffee = () => {
           </div>
 
           {/* Botão para adicionar ao carrinho */}
-          <button className="add-to-cart" onClick={() => addItem(coffee)}>
+          <button className="add-to-cart" onClick={() => handleAddCoffee(coffee)}>
             +
           </button>
         </div>

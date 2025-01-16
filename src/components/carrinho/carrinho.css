@@ -27,3 +27,8 @@
     font-weight: bold;
   }
   
+
+  .carrinho-actions {
+    display: flex;
+    flex-direction: row;
+  }
