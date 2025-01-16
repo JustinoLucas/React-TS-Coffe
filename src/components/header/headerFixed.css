@@ -61,3 +61,16 @@
 .add-product-btn:hover {
   background-color: #3f3f3f;
 }
+
+.delete-product-btn {
+  padding: 8px 16px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.delete-product-btn:hover {
+  background-color: #3f3f3f;
+}

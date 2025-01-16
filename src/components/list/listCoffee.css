@@ -17,7 +17,7 @@
 .coffee-image img {
     width: 80px;
     height: 80px;
-    object-fit: cover;
+    /* object-fit: cover; */
     border-radius: 8px;
     margin-right: 20px;
 }
